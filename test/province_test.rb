@@ -49,4 +49,15 @@ class ProvinceTest < Minitest::Test
   #  assert_equal(@asia.shortfall).NAN
   #  assert_equal(@asia.profit).NAN
   #end
+
+  def test_string_for_producers
+    data = {
+      name: "String Producers",
+      producers: "",
+      demand: 30,
+      price: 20
+    }
+
+    assert_raises(NoMethodError) { Province.new(data) }
+  end
 end
